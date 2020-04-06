@@ -1,11 +1,13 @@
-import static org.junit.jupiter.api.Assertions.*;
+package zad1;
+
 import org.easymock.EasyMock;
 import org.easymock.EasyMockExtension;
-import org.easymock.EasyMockRunner;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import zad1.App;
+import zad1.Service;
+
 import static org.assertj.core.api.Assertions.*;
 @ExtendWith({EasyMockExtension.class})
 class AppTest

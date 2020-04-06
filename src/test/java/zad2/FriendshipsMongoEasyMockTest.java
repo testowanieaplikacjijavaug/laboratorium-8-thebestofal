@@ -1,9 +1,6 @@
 package zad2;
 
-import org.easymock.EasyMockRunner;
-import org.easymock.Mock;
-import org.easymock.MockType;
-import org.easymock.TestSubject;
+import org.easymock.*;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -56,6 +53,7 @@ public class FriendshipsMongoEasyMockTest {
         Person joe = createMock(Person.class);
         expect(friends.findByName("Joe")).andReturn(joe);
         joe.addFriend("Carl");
+        EasyMock.expectLastCall();
         expect(joe.getFriends()).andReturn(Arrays.asList(new String[]{"Carl"}));
         replay(friends);
         replay(joe);

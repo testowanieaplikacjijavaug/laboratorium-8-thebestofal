@@ -1,3 +1,7 @@
+package zad1;
+
+import zad1.Service;
+
 public class App
 {
     private Service service;

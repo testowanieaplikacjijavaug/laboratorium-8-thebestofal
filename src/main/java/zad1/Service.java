@@ -1,3 +1,5 @@
+package zad1;
+
 public interface Service
 {
     public double pow(double a, double b);
