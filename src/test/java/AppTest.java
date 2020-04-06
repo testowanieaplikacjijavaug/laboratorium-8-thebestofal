@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import static org.assertj.core.api.Assertions.*;
 @ExtendWith({EasyMockExtension.class})
-class Zad1Przyklad
+class AppTest
 {
     private App app;
     private Service service;
