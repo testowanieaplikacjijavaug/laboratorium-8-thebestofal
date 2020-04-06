@@ -109,7 +109,7 @@ class AppTest
         assertThat(app.pow(2, 3)).isEqualTo(8.0);
         
         //works only in nice type of mock
-        assertThat(service.sqrt(2)).isZero();
+        assertThat(app.sqrt(2)).isZero();
         EasyMock.verify(service);
         
     }
