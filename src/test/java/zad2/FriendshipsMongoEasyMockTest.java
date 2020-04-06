@@ -49,4 +49,20 @@ public class FriendshipsMongoEasyMockTest {
         assertThat(friendships.getFriendsList("Joe")).hasSize(5).containsOnly("Karol","Dawid","Maciej","Tomek","Adam");
     }
     
+    //1
+    @Test
+    public void addFriendTest()
+    {
+        Person joe = createMock(Person.class);
+        expect(friends.findByName("Joe")).andReturn(joe);
+        joe.addFriend("Carl");
+        expect(joe.getFriends()).andReturn(Arrays.asList(new String[]{"Carl"}));
+        replay(friends);
+        replay(joe);
+        assertThat(friendships.getFriendsList("Joe")).containsOnly("Carl");
+    }
+    
+    //2
+    
+    
 }

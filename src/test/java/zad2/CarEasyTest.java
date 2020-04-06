@@ -2,6 +2,7 @@ package  zad2;
 import org.easymock.EasyMock;
 import org.easymock.*;
 import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -40,4 +41,28 @@ public class CarEasyTest {
             myFerrari.needsFuel();
         });
     }
+    
+    //1
+    @Test
+    void test_Car_temperature()
+    {
+        EasyMock.expect(myFerrari.getEngineTemperature()).andReturn(0.0);
+        EasyMock.replay(myFerrari);
+        assertThat(myFerrari.getEngineTemperature()).isZero();
+        EasyMock.verify(myFerrari);
+    }
+    
+    //2
+    @Test
+    public void test_enginetemp_exception() {
+        EasyMock.expect(myFerrari.getEngineTemperature()).andThrow(new RuntimeException());
+        EasyMock.replay(myFerrari);
+        assertThrows(RuntimeException.class, () -> {
+            myFerrari.getEngineTemperature();
+        });
+    }
+    
+    //3
+    
+    
 }
