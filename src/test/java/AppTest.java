@@ -27,8 +27,8 @@ class AppTest
         
         EasyMock.replay(service);
         
-        assertThat(service.pow(2, 3)).isEqualTo(8.0);
-        assertThat(service.factorial(3)).isEqualTo(6.0);
+        assertThat(app.pow(2, 3)).isEqualTo(8.0);
+        assertThat(app.factorial(3)).isEqualTo(6.0);
         
         EasyMock.verify(service);
     }
@@ -47,8 +47,8 @@ class AppTest
         EasyMock.replay(service);
         
         assertThatThrownBy(() -> {
-            assertThat(service.factorial(3)).isEqualTo(6.0);
-            assertThat(service.pow(2, 3)).isEqualTo(8.0);
+            assertThat(app.factorial(3)).isEqualTo(6.0);
+            assertThat(app.pow(2, 3)).isEqualTo(8.0);
             EasyMock.verify(service);
         }).isInstanceOf(AssertionError.class);
         
@@ -65,7 +65,7 @@ class AppTest
         EasyMock.replay(service);
     
         assertThatThrownBy(() -> {
-            assertThat(service.sqrt(3)).isZero();
+            assertThat(app.sqrt(3)).isZero();
             EasyMock.verify(service);
         }).isInstanceOf(AssertionError.class);
        
@@ -85,8 +85,8 @@ class AppTest
     
         EasyMock.replay(service);
     
-        assertThat(service.pow(2, 3)).isEqualTo(8.0);
-        assertThat(service.factorial(3)).isEqualTo(6.0);
+        assertThat(app.pow(2, 3)).isEqualTo(8.0);
+        assertThat(app.factorial(3)).isEqualTo(6.0);
 
         EasyMock.verify(service);
        
@@ -105,8 +105,8 @@ class AppTest
         
         EasyMock.replay(service);
     
-        assertThat(service.factorial(3)).isEqualTo(6.0);
-        assertThat(service.pow(2, 3)).isEqualTo(8.0);
+        assertThat(app.factorial(3)).isEqualTo(6.0);
+        assertThat(app.pow(2, 3)).isEqualTo(8.0);
         
         //works only in nice type of mock
         assertThat(service.sqrt(2)).isZero();
