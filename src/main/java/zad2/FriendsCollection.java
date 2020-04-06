@@ -1,3 +1,5 @@
+package zad2;
+
 import java.rmi.UnknownHostException;
 
 import org.jongo.Jongo;
@@ -5,6 +7,7 @@ import org.jongo.MongoCollection;
 
 import com.mongodb.DB;
 import com.mongodb.MongoClient;
+import zad2.Person;
 
 public class FriendsCollection {
     

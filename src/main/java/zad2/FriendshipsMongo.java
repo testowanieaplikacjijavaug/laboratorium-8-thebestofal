@@ -1,3 +1,5 @@
+package zad2;
+
 import java.rmi.UnknownHostException;
 import java.util.Collections;
 import java.util.List;
